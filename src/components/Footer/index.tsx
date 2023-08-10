@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
             links={[
                 {
                     key: 'Ant Design Pro',
-                    title: 'Panda API',
+                    title: 'dazhou API',
                     href: 'http://localhost:8000',
                     blankTarget: true,
                 },

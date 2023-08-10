@@ -73,7 +73,7 @@ export default defineConfig({
    * @name layout 插件
    * @doc https://umijs.org/docs/max/layout-menu
    */
-  title: 'Panda API',
+  title: 'dazhou API',
   layout: {
     locale: true,
     ...defaultSettings,
@@ -137,9 +137,8 @@ export default defineConfig({
     {
       requestLibPath: "import { request } from '@umijs/max'",
       // 或者使用在线的版本
-      schemaPath: 'http://localhost:8101/api/v2/api-docs',
-      // schemaPath: join(__dirname, 'oneapi.json'),
-      projectName: 'nero-api-backend',
+      schemaPath: 'http://localhost:7529/api//v3/api-docs',
+      projectName: 'dzapi-backend',
     },
   ],
   mfsu: {

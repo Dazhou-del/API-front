@@ -30,7 +30,7 @@ const InterfaceAnalysis: React.FC = () => {
     const option = {
         title: {
             text: '调用次数统计',
-            subtext: 'TOP3',
+            // subtext: 'TOP4',
             left: 'center'
         },
         tooltip: {

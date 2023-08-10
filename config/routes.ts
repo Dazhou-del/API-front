@@ -8,6 +8,7 @@ export default [
         component: './InterfaceInfo',
         hideInMenu: true,
     },
+    { name: 'sdk', icon: 'StarOutlined', path: '/sdk', component: './sdk' },
     {
         path: '/user',
         layout: false,

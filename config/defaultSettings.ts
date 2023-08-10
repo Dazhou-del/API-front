@@ -14,10 +14,10 @@ const Settings: ProLayoutProps & {
     fixedHeader: true,
     fixSiderbar: true,
     colorWeak: true,
-    title: 'Panda API',
+    title: ' API 商店',
     siderMenuType: 'sub',
     pwa: true,
-    logo: "https://image-bed-ichensw.oss-cn-hangzhou.aliyuncs.com/logo.png",
+    logo: "https://dazhou123.oss-cn-guangzhou.aliyuncs.com/gou.jpg",
     iconfontUrl: '',
     token: {
         // 参见ts声明，demo 见文档，通过token 修改样式

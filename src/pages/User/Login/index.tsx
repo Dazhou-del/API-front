@@ -6,7 +6,7 @@ import {useModel} from '@umijs/max';
 import {message, Tabs} from 'antd';
 import type {CSSProperties} from 'react';
 import React, {useRef, useState} from 'react';
-import pandaBackImg from '../../../../public/panda2.jpg';
+import pandaBackImg from '../../../../public/bj1.jpg';
 import logo from '../../../../public/logo.png';
 
 type LoginType = 'account' | 'register' | 'forgetPassword';
@@ -73,11 +73,13 @@ const Login: React.FC = () => {
                 }}
             >
                 <LoginFormPage
+                    // backgroundImageUrl="https://dazhou123.oss-cn-guangzhou.aliyuncs.com/wallhaven-y8lqo7.jpg"
+                    // {pandaBackImg}
                     backgroundImageUrl={pandaBackImg}
-                    // logo="https://image-bed-ichensw.oss-cn-hangzhou.aliyuncs.com/logo.png"
+                    // logo="https://dazhou123.oss-cn-guangzhou.aliyuncs.com/gou.jpg"
                     logo={logo}
-                    title="Panda API"
-                    subTitle="史上最好用的免费API接口平台"
+                    title="Dazhou API"
+                    subTitle="免费API接口平台"
                     initialValues={{
                         autoLogin: true,
                     }}
