@@ -1,4 +1,4 @@
-import { userLogoutUsingPOST } from '@/services/nero-api-backend/userController';
+import { userLogoutUsingPOST } from '@/services/dazhou-api-backend/userController';
 import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import { useEmotionCss } from '@ant-design/use-emotion-css';
 import { history, useModel } from '@umijs/max';

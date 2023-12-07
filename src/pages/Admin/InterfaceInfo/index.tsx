@@ -8,7 +8,7 @@ import {
     offlineInterfaceInfoUsingPOST,
     onlineInterfaceInfoUsingPOST,
     updateInterfaceInfoUsingPOST,
-} from '@/services/nero-api-backend/interfaceInfoController';
+} from '@/services/dazhou-api-backend/interfaceInfoController';
 import { PlusOutlined, QuestionCircleOutlined } from '@ant-design/icons';
 import type { ActionType, ProColumns, ProDescriptionsItemProps } from '@ant-design/pro-components';
 import { PageContainer, ProDescriptions, ProTable } from '@ant-design/pro-components';

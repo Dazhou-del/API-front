@@ -1,5 +1,5 @@
-import { listInterfaceInfoVOByPageUsingPOST } from '@/services/nero-api-backend/interfaceInfoController';
-import { addUserInterfaceInfoUsingPOST } from '@/services/nero-api-backend/userInterfaceInfoController';
+import { listInterfaceInfoVOByPageUsingPOST } from '@/services/dazhou-api-backend/interfaceInfoController';
+import { addUserInterfaceInfoUsingPOST } from '@/services/dazhou-api-backend/userInterfaceInfoController';
 import { ActionType, PageContainer, ProColumns, ProTable } from '@ant-design/pro-components';
 import { Button, Layout, message } from 'antd';
 import Search from 'antd/es/input/Search';
@@ -20,7 +20,6 @@ const contentStyle: React.CSSProperties = {
     minHeight: 120,
     lineHeight: '120px',
 };
-
 
 const Index: React.FC = () => {
     const [loading, setLoading] = useState(false);
@@ -44,7 +43,6 @@ const Index: React.FC = () => {
         }
         setLoading(false);
     };
-
 
     /**
      * table 展示的列
@@ -111,7 +109,6 @@ const Index: React.FC = () => {
                     >
                         在线调用
                     </Button>
-
                 ) : (
                     <Button
                         key="applyInterface"
@@ -128,10 +125,9 @@ const Index: React.FC = () => {
                     >
                         开通接口
                     </Button>
-                );  
-            }
+                );
+            },
         },
-        
     ];
 
     useEffect(() => {

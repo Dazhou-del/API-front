@@ -1,7 +1,7 @@
 import {
     getInterfaceInfoVOByIdUsingGET,
     invokeInterfaceInfoUsingPOST,
-} from '@/services/nero-api-backend/interfaceInfoController';
+} from '@/services/dazhou-api-backend/interfaceInfoController';
 import { useParams } from '@@/exports';
 import { PageContainer } from '@ant-design/pro-components';
 import { Badge, Button, Card, Descriptions, Divider, Form, Input, message, Table } from 'antd';
@@ -52,7 +52,7 @@ const Index: React.FC = () => {
     const [invokeLoading, setInvokeLoading] = useState(false);
     const [data, setData] = useState<API.InterfaceInfoVO>();
     const params = useParams();
-    const [invokeRes, setInvokeRes,] = useState<any>();
+    const [invokeRes, setInvokeRes] = useState<any>();
 
     const loadData = async () => {
         try {
@@ -88,25 +88,23 @@ const Index: React.FC = () => {
                 ...values,
             });
             console.log('调用接口请求数据：', res);
-            //获取图片url     
-            // url=JSON.parse(res.data).imgurl; 
+            //获取图片url
+            // url=JSON.parse(res.data).imgurl;
             // console.log('图片',url );
             // if(url===undefined){
             //     h?.remove();
             // }
-            console.log("res.data:="+res.data);
-            
+            console.log('res.data:=' + res.data);
+
             if (res.data) {
                 res.data = res.data.replace(/\\/g, '');
                 // const jsonData = JSON.stringify(res.data as unknown as string);
                 setInvokeRes(res.data);
                 message.success('接口请求成功');
-               
             } else {
                 const messageObj = JSON.parse(res.message as string);
                 message.error(messageObj.message);
             }
-            
         } catch (error: any) {
             message.error('接口请求失败');
         }
@@ -188,7 +186,7 @@ const Index: React.FC = () => {
                     </Card>
                     <Divider />
                     <Card title={'返回结果'} loading={invokeLoading}>
-                        <Input.TextArea value={invokeRes} rows={10}/>
+                        <Input.TextArea value={invokeRes} rows={10} />
 
                         {/* <input type='text' value={invokeRes} ></input> */}
                         {/* <img src={url}  id='igg'></img> */}

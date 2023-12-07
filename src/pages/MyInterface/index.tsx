@@ -1,4 +1,4 @@
-import { listInterfaceInfoVOByUserIdPageUsingPOST } from '@/services/nero-api-backend/interfaceInfoController';
+import { listInterfaceInfoVOByUserIdPageUsingPOST } from '@/services/dazhou-api-backend/interfaceInfoController';
 import { ShareAltOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-components';
 import { history } from '@umijs/max';

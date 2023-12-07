@@ -1,11 +1,19 @@
 import Footer from '@/components/Footer';
-import {userLoginUsingPOST, userRegisterUsingPOST} from '@/services/nero-api-backend/userController';
-import {LockOutlined, UserOutlined,} from '@ant-design/icons';
-import {LoginFormPage, ProFormCheckbox, ProFormInstance, ProFormText,} from '@ant-design/pro-components';
-import {useModel} from '@umijs/max';
-import {message, Tabs} from 'antd';
-import type {CSSProperties} from 'react';
-import React, {useRef, useState} from 'react';
+import {
+    userLoginUsingPOST,
+    userRegisterUsingPOST,
+} from '@/services/dazhou-api-backend/userController';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import {
+    LoginFormPage,
+    ProFormCheckbox,
+    ProFormInstance,
+    ProFormText,
+} from '@ant-design/pro-components';
+import { useModel } from '@umijs/max';
+import { message, Tabs } from 'antd';
+import type { CSSProperties } from 'react';
+import React, { useRef, useState } from 'react';
 import pandaBackImg from '../../../../public/bj1.jpg';
 import logo from '../../../../public/logo.png';
 
@@ -18,13 +26,12 @@ const iconStyles: CSSProperties = {
     cursor: 'pointer',
 };
 const Login: React.FC = () => {
-    const {initialState, setInitialState} = useModel('@@initialState');
+    const { initialState, setInitialState } = useModel('@@initialState');
     const [loginType, setLoginType] = useState<LoginType>('account');
     const formRef = useRef<ProFormInstance>();
 
-
     const handleSubmit = async (values: API.UserRegisterRequest) => {
-        const {userPassword, checkPassword} = values;
+        const { userPassword, checkPassword } = values;
         if (checkPassword) {
             // 注册
             if (userPassword !== checkPassword) {
@@ -35,13 +42,12 @@ const Login: React.FC = () => {
             if (res.code === 0) {
                 // 注册成功
                 const defaultRegisterSuccessMessage = '注册成功！';
-                message.success(defaultRegisterSuccessMessage)
+                message.success(defaultRegisterSuccessMessage);
                 // 切换到登录
                 setLoginType('account');
                 // 重置表单
                 formRef.current?.resetFields();
             }
-
         } else {
             // 登录
             const res = await userLoginUsingPOST({
@@ -93,8 +99,8 @@ const Login: React.FC = () => {
                             activeKey={loginType}
                             onChange={(activeKey) => setLoginType(activeKey as LoginType)}
                         >
-                            <Tabs.TabPane key={'account'} tab={'登录'}/>
-                            <Tabs.TabPane key={'register'} tab={'注册'}/>
+                            <Tabs.TabPane key={'account'} tab={'登录'} />
+                            <Tabs.TabPane key={'register'} tab={'注册'} />
                         </Tabs>
                     }
                     {loginType === 'account' && (
@@ -103,7 +109,7 @@ const Login: React.FC = () => {
                                 name="userAccount"
                                 fieldProps={{
                                     size: 'large',
-                                    prefix: <UserOutlined/>,
+                                    prefix: <UserOutlined />,
                                 }}
                                 placeholder={'请输入用户名'}
                                 rules={[
@@ -117,7 +123,7 @@ const Login: React.FC = () => {
                                 name="userPassword"
                                 fieldProps={{
                                     size: 'large',
-                                    prefix: <LockOutlined/>,
+                                    prefix: <LockOutlined />,
                                 }}
                                 placeholder={'请输入密码'}
                                 rules={[
@@ -139,7 +145,7 @@ const Login: React.FC = () => {
                                     style={{
                                         float: 'right',
                                     }}
-                                    onClick={() => setLoginType("forgetPassword")}
+                                    onClick={() => setLoginType('forgetPassword')}
                                 >
                                     忘记密码 ?
                                 </a>
@@ -151,7 +157,7 @@ const Login: React.FC = () => {
                             <ProFormText
                                 fieldProps={{
                                     size: 'large',
-                                    prefix: <UserOutlined/>,
+                                    prefix: <UserOutlined />,
                                 }}
                                 name="userAccount"
                                 placeholder={'请输入用户名'}
@@ -169,7 +175,7 @@ const Login: React.FC = () => {
                             <ProFormText.Password
                                 fieldProps={{
                                     size: 'large',
-                                    prefix: <LockOutlined/>,
+                                    prefix: <LockOutlined />,
                                 }}
                                 name="userPassword"
                                 placeholder={'请输入密码'}
@@ -187,7 +193,7 @@ const Login: React.FC = () => {
                             <ProFormText.Password
                                 fieldProps={{
                                     size: 'large',
-                                    prefix: <LockOutlined/>,
+                                    prefix: <LockOutlined />,
                                 }}
                                 name="checkPassword"
                                 placeholder={'请再次输入密码'}
@@ -206,7 +212,7 @@ const Login: React.FC = () => {
                     )}
                 </LoginFormPage>
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 };
